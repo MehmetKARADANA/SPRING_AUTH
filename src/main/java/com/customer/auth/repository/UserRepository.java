@@ -1,10 +1,10 @@
 package com.customer.auth.repository;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.customer.auth.model.User;
 
 @Repository
 public class UserRepository {
@@ -21,8 +21,8 @@ private DynamoDBMapper dynamoDBMapper;
         return user.getUsername();
     }
 
-    public User getUserById(String id) {
-        return dynamoDBMapper.load(User.class, id);
+    public User getUserById(String username) {
+        return dynamoDBMapper.load(User.class, username);
     }
 
 
