@@ -28,7 +28,7 @@ public class AuthenticationService {
           String hashedPassword = hashPassword(password);
             user.setPassword(hashedPassword);
             userRepository.createUser(user);
-            return loginUser(username, hashedPassword);
+            return loginUser(username, password);
         }
        return null;
        
